@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>1task</title>
+    <link rel="stylesheet" href="./css/style.css" />
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  </head>
+  <body>
+
+    <div id="app"></div>
+
+    <script type="text/babel">
+
+      const Header = () => {
+        return (
+          <header className="header">
+            <div className="container header-inner">
+              <a href="#" className="logo">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/1280px-React-icon.svg.png?_=20220125121207" alt="React icon" />
+              </a>
+              <nav className="header-nav">
+                <ul className="nav">
+                  <li className="nav-item">
+                    <a target="_blank" href="https://react.dev/learn">Quick Start</a>
+                  </li>
+                  <li className="nav-item">
+                    <a target="_blank" href="https://react.dev/learn/installation">Installation</a>
+                  </li>
+                  <li className="nav-item">
+                    <a target="_blank" href="https://react.dev/learn/setup">Setup</a>
+                  </li>
+                  <li className="nav-item">
+                    <a target="_blank" href="https://react.dev/learn/react-compiler">React Compiler</a>
+                  </li>
+                </ul>
+              </nav>
+            </div>
+          </header>
+        )
+      };
+
+      const Sidebar = () => {
+        return (
+          <aside className="sidebar">
+            <h3 className="sidebar-title">Learn React</h3>
+            <ul className="sidebar-nav">
+              <li className="nav-item">
+                <a target="_blank" href="https://react.dev/learn/describing-the-ui">
+                  Describing the UI
+                </a>
+              </li>
+              <li className="nav-item">
+                <a target="_blank" href="https://react.dev/learn/adding-interactivity">
+                  Adding Interactivity
+                </a>
+              </li>
+              <li className="nav-item">
+                <a target="_blank" href="https://react.dev/learn/managing-state">
+                  Managing State
+                </a>
+              </li>
+              <li className="nav-item">
+                <a target="_blank" href="https://react.dev/learn/escape-hatches">
+                  Escape Hatches
+                </a>
+              </li>
+            </ul>
+          </aside>
+        )
+      };
+
+      const Footer = () => {
+        return (
+          <footer className="footer">
+            <div className="container footer-container">
+              <span>If you want Learn React, go to official <a target="_blank" className="footer-link" href="https://react.dev/">site</a></span>
+            </div>
+          </footer>
+        )
+      };
+
+      const Content = () => {
+        return (
+          <main className="main">
+            <div className="container main-container">
+              <h1 className="main-title">React</h1>
+              <h2 className="subtitle">The library for web and native user interfaces</h2>
+              <div className="main-btns">
+                <a target="_blank" href="https://react.dev/learn" className="main-btn main-btn-filled">Learn React</a>
+                <a target="_blank" href="https://react.dev/reference/react" className="main-btn">API Reference</a>
+              </div>
+              <ul className="main-list">
+                <li>Create user interfaces from components</li>
+                <li>Write components with code and markup</li>
+                <li>Add interactivity wherever you need it</li>
+                <li>Go full-stack with a framework</li>
+                <li>Use the best from every platform</li>
+              </ul>
+              <p className="main-text">
+                React lets you build user interfaces out of individual pieces called components.
+                Create your own React components like Thumbnail, LikeButton, and Video. Then combine them into entire screens, pages, and apps.
+              </p>
+            </div>
+          </main>
+        )
+      };
+
+      const Page = (
+        <div className="page-content">
+          <Header />
+          <Sidebar />
+          <Content />
+          <Footer />
+        </div>
+      );
+
+      ReactDOM.createRoot(document.getElementById("app")).render(Page);
+    </script>
+  </body>
+</html>
