@@ -1,10 +1,11 @@
 <!doctype html>
-<html lang="en">
+<html lang="ru">
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>1task</title>
+    <link rel="stylesheet" href="./css/style.css" />
     <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
     <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
@@ -12,8 +13,46 @@
   <body>
 
     <div id="app"></div>
-    <script type="text/babel">
 
+    <script type="text/babel">
+      const MovieCard = ({name, year, imageUrl}) => {
+        return (
+          <div className="movie-card">
+            <div className="movie-card-top">
+              <img src={imageUrl} alt={name} />
+            </div>
+            <div className="movie-card-info">
+              <h4 className="movie-name">{name}</h4>
+              <small className="movie-year">{year}</small>
+            </div>
+          </div>
+        )
+      };
+
+      const Movies = (
+        <div className="page-content">
+          <h1 className="main-title">Top 3 Films</h1>
+          <div className="movies">
+            <MovieCard
+              name={"Интерстеллар"}
+              year={2014}
+              imageUrl={"https://avatars.mds.yandex.net/get-kinopoisk-image/1600647/430042eb-ee69-4818-aed0-a312400a26bf/136x204"}
+            />
+            <MovieCard
+              name={"Побег из Шоушенка"}
+              year={1994}
+              imageUrl={"https://avatars.mds.yandex.net/get-kinopoisk-image/1599028/0b76b2a2-d1c7-4f04-a284-80ff7bb709a4/136x204"}
+            />
+            <MovieCard
+              name={"Терминатор 2: Судный день"}
+              year={1991}
+              imageUrl={"https://avatars.mds.yandex.net/get-kinopoisk-image/10893610/2dd14742-f241-42ca-9db4-331e3a483c50/136x204"}
+            />
+          </div>
+        </div>
+      );
+
+      ReactDOM.createRoot(document.getElementById("app")).render(Movies);
     </script>
   </body>
 </html>
